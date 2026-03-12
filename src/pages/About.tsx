@@ -13,9 +13,8 @@ const About = () => (
         </h1>
         <p className="text-lg text-muted-foreground">
           NourishNet is an AI-native coordination layer that connects surplus food from restaurants and
-          retailers with the people and communities who need it most. It was built for the UK AI Agent
-          Hackathon (EP4 x OpenClaw) to show how autonomous agents can tackle real-world problems like
-          food waste and hunger.
+          retailers with the people and communities who need it most. It was built to show how autonomous
+          AI agents can tackle real-world problems like food waste and hunger.
         </p>
       </section>
 
