@@ -1,0 +1,61 @@
+{
+  "demoScenarios": [
+    {
+      "id": "scenario-1",
+      "title": "Happy Path — Restaurant Surplus Rescue",
+      "description": "A restaurant posts 3 sandwiches at closing time. Scout detects, Coordinator matches to a nearby NGO, Logistics notifies a volunteer who picks up.",
+      "steps": [
+        { "agent": "scout", "action": "detect", "timestamp": "2026-03-12T18:20:00Z", "detail": "Sunrise Bakery flagged 3 unsold sandwiches via photo scan", "confidence": 0.95 },
+        { "agent": "coordinator", "action": "match", "timestamp": "2026-03-12T18:20:12Z", "detail": "Matched to FoodShare NGO (0.4 km away, capacity 10). Score: 0.92", "confidence": 0.92 },
+        { "agent": "logistics", "action": "notify", "timestamp": "2026-03-12T18:20:18Z", "detail": "Sent pickup code NOURISH5 to volunteer Maya K. ETA: 12 min", "confidence": 0.98 },
+        { "agent": "logistics", "action": "confirm", "timestamp": "2026-03-12T18:32:00Z", "detail": "Pickup confirmed. 3 meals rescued. CO₂ avoided: 0.02t", "confidence": 1.0 }
+      ],
+      "impact": { "mealsRescued": 3, "peopleFed": 3, "co2AvoidedKg": 1.8 }
+    },
+    {
+      "id": "scenario-2",
+      "title": "Elicit — Ambiguous Listing Needs Human Review",
+      "description": "A donor posts an unclear listing. Coordinator has low confidence so it escalates to a human supervisor who clarifies, then items are distributed.",
+      "steps": [
+        { "agent": "scout", "action": "detect", "timestamp": "2026-03-12T14:05:00Z", "detail": "Green Grocer posted 'some fruit boxes' — quantity unclear", "confidence": 0.62 },
+        { "agent": "coordinator", "action": "elicit", "timestamp": "2026-03-12T14:05:08Z", "detail": "Low confidence (0.55). Escalated to human supervisor for quantity confirmation", "confidence": 0.55 },
+        { "agent": "supervisor", "action": "clarify", "timestamp": "2026-03-12T14:08:30Z", "detail": "Supervisor confirmed: 8 fruit boxes, all fresh. Approved for matching", "confidence": 1.0 },
+        { "agent": "coordinator", "action": "match", "timestamp": "2026-03-12T14:08:45Z", "detail": "Matched to Shelter #12 (1.2 km). Score: 0.88", "confidence": 0.88 },
+        { "agent": "logistics", "action": "notify", "timestamp": "2026-03-12T14:09:00Z", "detail": "Sent pickup details to volunteer Omar H. ETA: 18 min", "confidence": 0.96 }
+      ],
+      "impact": { "mealsRescued": 8, "peopleFed": 12, "co2AvoidedKg": 4.2 }
+    },
+    {
+      "id": "scenario-3",
+      "title": "High Urgency — Broadcast to Nearby Volunteers",
+      "description": "A large surplus is about to expire. Coordinator broadcasts to multiple nearby volunteers. First responder picks up.",
+      "steps": [
+        { "agent": "scout", "action": "detect", "timestamp": "2026-03-12T20:45:00Z", "detail": "Cafe Express: 15 wraps + 8 salads expiring in 45 min", "confidence": 0.97 },
+        { "agent": "coordinator", "action": "broadcast", "timestamp": "2026-03-12T20:45:05Z", "detail": "URGENT: Broadcast to 6 volunteers within 2km radius. High quantity + time pressure", "confidence": 0.94 },
+        { "agent": "logistics", "action": "notify", "timestamp": "2026-03-12T20:45:10Z", "detail": "First response: Volunteer Priya P. accepted (0.8 km, ETA 8 min)", "confidence": 0.99 },
+        { "agent": "logistics", "action": "confirm", "timestamp": "2026-03-12T20:53:00Z", "detail": "Pickup confirmed. 23 meals rescued. Redirected remaining to Shelter #7", "confidence": 1.0 }
+      ],
+      "impact": { "mealsRescued": 23, "peopleFed": 20, "co2AvoidedKg": 12.5 }
+    }
+  ],
+  "sampleListings": [
+    { "id": "listing-1", "title": "Sunrise Bakery", "items": "3 sandwiches (ham & cheese)", "quantity": 3, "foodType": "prepared", "dietaryTags": ["contains-gluten", "contains-dairy"], "expiresIn": "30 min", "distance": "0.4 km", "urgency": "medium", "status": "available", "donorAvatar": "🍞" },
+    { "id": "listing-2", "title": "Green Grocer", "items": "8 fruit boxes (mixed)", "quantity": 8, "foodType": "fresh", "dietaryTags": ["vegan", "gluten-free"], "expiresIn": "4 hours", "distance": "1.2 km", "urgency": "low", "status": "available", "donorAvatar": "🥬" },
+    { "id": "listing-3", "title": "Cafe Express", "items": "15 wraps + 8 salads", "quantity": 23, "foodType": "prepared", "dietaryTags": ["contains-gluten"], "expiresIn": "45 min", "distance": "0.8 km", "urgency": "high", "status": "available", "donorAvatar": "☕" },
+    { "id": "listing-4", "title": "Pasta Palace", "items": "6 portions penne arrabbiata", "quantity": 6, "foodType": "prepared", "dietaryTags": ["vegetarian", "contains-gluten"], "expiresIn": "1 hour", "distance": "1.5 km", "urgency": "medium", "status": "claimed", "donorAvatar": "🍝" },
+    { "id": "listing-5", "title": "Corner Deli", "items": "4 baguettes + 2 soups", "quantity": 6, "foodType": "prepared", "dietaryTags": ["contains-gluten", "contains-dairy"], "expiresIn": "2 hours", "distance": "0.6 km", "urgency": "low", "status": "available", "donorAvatar": "🥖" },
+    { "id": "listing-6", "title": "Fresh Fields Market", "items": "12 kg mixed vegetables", "quantity": 12, "foodType": "fresh", "dietaryTags": ["vegan", "gluten-free"], "expiresIn": "6 hours", "distance": "2.1 km", "urgency": "low", "status": "available", "donorAvatar": "🥕" },
+    { "id": "listing-7", "title": "Sushi Station", "items": "10 sushi rolls (salmon & veg)", "quantity": 10, "foodType": "prepared", "dietaryTags": ["contains-fish", "gluten-free"], "expiresIn": "20 min", "distance": "0.3 km", "urgency": "high", "status": "available", "donorAvatar": "🍣" },
+    { "id": "listing-8", "title": "Healthy Bites", "items": "5 quinoa bowls", "quantity": 5, "foodType": "prepared", "dietaryTags": ["vegan", "gluten-free"], "expiresIn": "1.5 hours", "distance": "1.8 km", "urgency": "medium", "status": "pending", "donorAvatar": "🥗" },
+    { "id": "listing-9", "title": "The Bread Basket", "items": "20 assorted bread rolls", "quantity": 20, "foodType": "baked", "dietaryTags": ["vegetarian", "contains-gluten"], "expiresIn": "3 hours", "distance": "0.9 km", "urgency": "low", "status": "available", "donorAvatar": "🍞" },
+    { "id": "listing-10", "title": "Raj's Curry House", "items": "8 portions chicken tikka + rice", "quantity": 8, "foodType": "prepared", "dietaryTags": ["contains-dairy", "gluten-free"], "expiresIn": "50 min", "distance": "1.1 km", "urgency": "medium", "status": "available", "donorAvatar": "🍛" }
+  ],
+  "supervisorElicits": [
+    { "id": "elicit-1", "listing": "Green Grocer", "issue": "Quantity unclear — donor said 'some fruit boxes'", "potentialImpact": "Could feed 12 people", "suggestedAction": "Confirm quantity with donor", "status": "pending" },
+    { "id": "elicit-2", "listing": "Street Food Van", "issue": "Location not verified — address doesn't match GPS", "potentialImpact": "Could feed 5 people", "suggestedAction": "Verify pickup address", "status": "pending" },
+    { "id": "elicit-3", "listing": "Hotel Kitchen", "issue": "Allergen info missing for 3 items", "potentialImpact": "Could feed 15 people", "suggestedAction": "Request allergen details before matching", "status": "pending" },
+    { "id": "elicit-4", "listing": "Catering Co.", "issue": "Large quantity (50 portions) — exceeds single volunteer capacity", "potentialImpact": "Could feed 50 people", "suggestedAction": "Split into 2 volunteer pickups", "status": "resolved" },
+    { "id": "elicit-5", "listing": "Night Market", "issue": "Late-night listing — safety concerns for volunteer pickup", "potentialImpact": "Could feed 8 people", "suggestedAction": "Pair volunteers or postpone to morning", "status": "pending" },
+    { "id": "elicit-6", "listing": "School Canteen", "issue": "Items marked 'for children' — needs age-appropriate recipient", "potentialImpact": "Could feed 20 children", "suggestedAction": "Match to family shelter or children's NGO only", "status": "resolved" }
+  ]
+}
