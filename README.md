@@ -1,24 +1,35 @@
 # NourishNet – Multi‑Agent AI for Food Rescue
 
+### AI for Good • Hackathon entry — Changemaker League: AI for Good 2026
+
+
 <div align="center">
   <img src="https://img.shields.io/badge/status-hackathon%20ready-brightgreen" alt="Status"/>
   <img src="https://img.shields.io/badge/license-MIT-blue" alt="License"/>
   <img src="https://img.shields.io/badge/PRs-welcome-orange" alt="PRs welcome"/>
-  <img src="https://img.shields.io/badge/powered%20by-OpenClaw%20%7C%20FLock%20%7C%20MCP-important" alt="Powered by"/>
 </div>
 
 <p align="center">
-  <i>Autonomous AI agents connecting surplus food with people in need – via WhatsApp, Telegram, and human‑in‑the‑loop oversight.</i>
+  <i>Turn local surplus into meals — fast, fair, and human-centered.
+NourishNet uses lightweight AI agents to find surplus food, match it to nearby need, and notify volunteers — with explainability and a human-in-the-loop for safety. .</i>
 </p>
 
 <p align="center">
-  <b>🏆 Built for the FLock.io Bounty – UK AI Agent Hackathon EP4 x OpenClaw</b>
 </p>
 
 ---
 
 ## 📖 Overview
 
+Every day restaurants, bakeries and shops throw away food that could feed people in the same neighborhood. We wanted to build something practical, humane and trustworthy that helps communities rescue that food quickly — while keeping humans in control.
+
+NourishNet was born from three simple beliefs:
+
+Small acts, multiplied, change lives.
+
+AI can connect people, not replace them.
+
+Trust and transparency are essential when technology touches people’s food and safety.
 **NourishNet** is a multi‑agent system that tackles food waste and food insecurity. It aligns with **UN SDG 2 (Zero Hunger)**, **SDG 3 (Good Health)**, and **SDG 12 (Responsible Consumption)**.
 
 Three specialised **autonomous AI agents** collaborate to:
@@ -26,7 +37,6 @@ Three specialised **autonomous AI agents** collaborate to:
 - Match supply with NGOs and individuals (**Coordinator Agent**)
 - Communicate via WhatsApp/Telegram and handle conversations (**Logistics Agent**)
 
-All agents are powered by **open‑source LLMs** served through the **FLock API**, orchestrated with **OpenClaw** and the **Model Context Protocol (MCP)** for inter‑agent communication. A **human supervisor dashboard** provides oversight for edge cases.
 
 > **Ethics & Safety**: NourishNet is built with explicit ethics guardrails across all agents (beneficence, non‑maleficence, fairness, privacy, transparency, and accountability), including content moderation, HITL escalation, bias audits, data minimisation, and audit trails. See [Ethics Guardrails](docs/ethics_guardrails.md) for full details.
 
@@ -39,6 +49,14 @@ The organizations Svidok.org, LifeForce, and Economists for Ukraine are all prog
 The **NourishNet** project is not just similar in spirit; it shares a foundational architecture and philosophy. By understanding these organizations, you can see a clear path for how NourishNet can scale and integrate into a larger ecosystem of humanitarian tech.
 
 Here’s a detailed breakdown of how NourishNet aligns with and can draw inspiration from these initiatives, including conceptual code integrations.
+
+### Why this helps communities
+- Reduces waste: moves good food from bins to people quickly.
+- Saves resources: increases efficiency for volunteers and charities.
+- Protects dignity: simple, respectful messages and human review reduce embarrassing mistakes.
+- Builds trust: transparent scores and logs let partners audit decisions.
+- Adaptable: rules can be tuned for different cities, cultures, and partner priorities.
+
 
 ### The Ecosystem: AI for Good Foundation
 
@@ -932,8 +950,6 @@ This keeps the **core intelligence and routing centralised**, while letting the 
 
 ## 🤖 AI Models Powering Each Agent
 
-All agents use **only open‑source models**, accessed via the **FLock API**, as required by the bounty. Each agent is paired with a model optimised for its specific task – balancing accuracy, speed, and context window. This section explains the models, why they were chosen, example prompts, and how they integrate with the FLock client used in this repo.
-
 ---
 
 ### 1. Scout Agent – Entity Extraction & Classification
@@ -1070,7 +1086,6 @@ response = await self.call_flock(
 | **Coordinator** | Mistral 7B Instruct        | 7B   | Strong reasoning for numeric scores, robust with varying context.          |
 | **Logistics**   | Gemma 2B Instruct          | 2B   | Ultra‑low latency for chat while keeping conversational quality.          |
 
-All models are **open‑source** and served via the **FLock API**, ensuring compliance with the bounty’s “open‑source models only” requirement.
 
 ---
 
@@ -1209,7 +1224,6 @@ nourishnet/
 
 - Python 3.10+
 - (Optional) Redis
-- FLock API key (get one at [flock.io](https://flock.io))
 - Twilio account (for WhatsApp) / Telegram Bot token (optional for demo)
 
 ### Installation
@@ -1372,6 +1386,15 @@ The main dashboard shows:
 - **Human supervisor panel** – pending tasks with accept/reject buttons.
 - **Chat simulator** – interact with the Logistics Agent.
 - **Impact counters** – meals saved, CO₂ avoided, people reached (update in real time).
+- 
+## Ethics & safety 
+
+We built NourishNet around guardrails that matter in the real world:
+- Human oversight: low confidence → human review before distribution.
+- Minimal data: only store what is necessary (phone and opt-in), and provide easy ways to opt out.
+- Transparent decisions: every match includes a confidence score and a short reason.
+- Safety checks: flag possible allergen or packaging concerns and escalate.
+- Open source: code and methodology are available so communities and experts can audit our approach.
 
 ---
 
@@ -1383,43 +1406,3 @@ The main dashboard shows:
 - **Persist state** – replace the in‑memory stores with Redis.
 
 ---
-
-## 🏆 FLock Bounty Requirements – How We Meet Them
-
-| Requirement                    | Implementation                                                                          |
-|--------------------------------|-----------------------------------------------------------------------------------------|
-| **Autonomous AI agents**       | Three agents run continuously, making decisions via LLMs.                               |
-| **OpenClaw framework**         | Agents are built with OpenClaw (custom MCP adapter).                                    |
-| **SDG‑aligned with impact**    | Directly addresses SDG 2, 3, 12; live impact dashboard.                                 |
-| **FLock API for inference**    | All model calls go through FLock; we use Llama 3.1, Mistral, Gemma.                    |
-| **Open‑source models only**    | All models used are open‑source.                                                        |
-| **Multi‑channel integration**  | WhatsApp and Telegram (mock or real).                                                   |
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgements
-
-- [FLock.io](https://flock.io) for the API and bounty.
-- [OpenClaw](https://openclaw.org) for the agent framework.
-- [MCP](https://modelcontextprotocol.io) for the communication protocol.
-- UK AI Agent Hackathon EP4 organisers.
-
----
-
-<p align="center">
-  Made with ❤️ by Team NourishNet<br>
-  <i>AI Agents for Zero Hunger</i>
-</p>
-```
