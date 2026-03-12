@@ -10,21 +10,18 @@ const features = [
     title: "The Scout Agent",
     desc: "Monitors local businesses at closing time, identifies surplus food, and categorizes it using open-source AI models.",
     mascot: mascotScout,
-    colorClass: "bg-scout/10 text-scout",
   },
   {
     icon: GitBranch,
     title: "The Coordinator Agent",
     desc: "Matches supply with nearby NGOs or individuals based on proximity and urgency. Sends intelligent alerts.",
     mascot: mascotCoordinator,
-    colorClass: "bg-coordinator/10 text-coordinator",
   },
   {
     icon: Truck,
     title: "The Logistics Agent",
     desc: "Provides pickup codes, directions, and real-time updates. Closes the loop and tracks every rescued meal.",
     mascot: mascotLogistics,
-    colorClass: "bg-logistics/10 text-logistics",
   },
 ];
 
@@ -46,8 +43,8 @@ const FeaturesSection = () => (
         >
           <div className="flex items-center gap-3 mb-4">
             <img src={f.mascot} alt={f.title} className="h-14 w-14 drop-shadow-sm" />
-            <div className={`h-10 w-10 rounded-xl flex items-center justify-center ${f.colorClass}`}>
-              <f.icon className="h-5 w-5" />
+            <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center">
+              <f.icon className="h-5 w-5 text-accent" />
             </div>
           </div>
           <h3 className="text-xl font-bold mb-2 text-foreground">{f.title}</h3>
