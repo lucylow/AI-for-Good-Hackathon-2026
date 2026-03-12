@@ -34,7 +34,7 @@ const DemoChat = () => {
           <p className="text-muted-foreground mb-4">
             This chat simulates how a user interacts with our agent on WhatsApp. Type <strong>"hungry"</strong>, <strong>"food"</strong>, or <strong>"help"</strong> to see the agent in action.
           </p>
-          <p className="text-sm text-muted-foreground">⚡ Powered by FLock API (Llama 3) for intent recognition and safety.</p>
+          <p className="text-sm text-muted-foreground">⚡ Powered by AI (open-source LLMs) for intent recognition and safety.</p>
           <div className="mt-4 bg-secondary rounded-xl px-4 py-3 text-sm text-secondary-foreground">
             📱 Multi-channel ready: WhatsApp, Telegram, and SMS.
           </div>
