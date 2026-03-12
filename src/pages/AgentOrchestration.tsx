@@ -416,7 +416,7 @@ const AgentOrchestration = () => {
 
         {/* Architecture Info */}
         <div className="rounded-3xl p-8 text-primary-foreground" style={{ background: "var(--gradient-impact)" }}>
-          <h2 className="text-2xl font-bold mb-2 text-center">OpenClaw MCP Architecture</h2>
+          <h2 className="text-2xl font-bold mb-2 text-center">AI Agent Architecture</h2>
           <p className="text-sm opacity-80 text-center mb-6">
             5 autonomous agents coordinated via Model Context Protocol event bus
           </p>
