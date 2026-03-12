@@ -19,7 +19,7 @@ const HeroSection = () => (
         <span className="text-accent border-b-[3px] border-accent">fighting hunger.</span>
       </h1>
       <p className="text-lg text-muted-foreground max-w-[550px] mb-8">
-        NourishNet connects businesses, NGOs, and people via WhatsApp/Telegram to redistribute surplus meals — powered by OpenClaw and FLock's open-source LLMs.
+        NourishNet connects businesses, NGOs, and people via WhatsApp/Telegram to redistribute surplus meals — powered by AI and open-source models.
       </p>
       <div className="flex gap-3 flex-wrap">
         <Button size="lg" asChild>

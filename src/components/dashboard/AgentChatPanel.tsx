@@ -48,7 +48,7 @@ const AgentChatPanel = ({ messages, onSend }: Props) => {
           <Send className="h-4 w-4" />
         </Button>
       </div>
-      <p className="text-xs text-muted-foreground text-center mt-2">Simulated via FLock (Gemma 2B)</p>
+      <p className="text-xs text-muted-foreground text-center mt-2">Simulated via AI agent</p>
     </div>
   );
 };

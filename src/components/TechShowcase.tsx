@@ -2,7 +2,7 @@ import { Bot, Cpu, MessageCircle, Send, Globe } from "lucide-react";
 
 const techs = [
   { icon: Bot, label: "OpenClaw", sub: "agent orchestration" },
-  { icon: Cpu, label: "FLock API", sub: "open-source LLMs" },
+  { icon: Cpu, label: "AI Models", sub: "open-source LLMs" },
   { icon: MessageCircle, label: "WhatsApp", sub: "" },
   { icon: Send, label: "Telegram", sub: "" },
   { icon: Globe, label: "UN SDG 2, 12, 3", sub: "" },

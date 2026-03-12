@@ -2,7 +2,7 @@ import { User } from "lucide-react";
 
 const team = [
   { name: "Alex Chen", role: "Agent Architect" },
-  { name: "Maya Kapoor", role: "Backend & FLock" },
+  { name: "Maya Kapoor", role: "Backend & AI" },
   { name: "Omar Hassan", role: "Frontend & UX" },
   { name: "Priya Patel", role: "SDG & Partnerships" },
 ];

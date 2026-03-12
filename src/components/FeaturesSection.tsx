@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Search, GitBranch, Truck } from "lucide-react";
 
 const features = [
-  { icon: Search, title: "The Scout Agent", desc: "Monitors local businesses at closing time, identifies surplus food, and categorizes it using FLock's open-source LLMs." },
+  { icon: Search, title: "The Scout Agent", desc: "Monitors local businesses at closing time, identifies surplus food, and categorizes it using open-source AI models." },
   { icon: GitBranch, title: "The Coordinator Agent", desc: "Matches supply with nearby NGOs or individuals based on proximity and urgency. Sends intelligent alerts." },
   { icon: Truck, title: "The Logistics Agent", desc: "Provides pickup codes, directions, and real-time updates. Closes the loop and tracks every rescued meal." },
 ];
