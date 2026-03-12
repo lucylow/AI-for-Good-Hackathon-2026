@@ -14,7 +14,206 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      donations: {
+        Row: {
+          created_at: string
+          description: string | null
+          donor_id: string | null
+          expires_at: string | null
+          food_type: string
+          id: string
+          pickup_address: string
+          pickup_lat: number | null
+          pickup_lng: number | null
+          quantity: number
+          status: string
+          title: string
+          unit: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          donor_id?: string | null
+          expires_at?: string | null
+          food_type: string
+          id?: string
+          pickup_address: string
+          pickup_lat?: number | null
+          pickup_lng?: number | null
+          quantity?: number
+          status?: string
+          title: string
+          unit?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          donor_id?: string | null
+          expires_at?: string | null
+          food_type?: string
+          id?: string
+          pickup_address?: string
+          pickup_lat?: number | null
+          pickup_lng?: number | null
+          quantity?: number
+          status?: string
+          title?: string
+          unit?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      impact_events: {
+        Row: {
+          co2_saved_kg: number | null
+          id: string
+          kg_rescued: number | null
+          match_id: string | null
+          meals_provided: number | null
+          notes: string | null
+          recorded_at: string
+        }
+        Insert: {
+          co2_saved_kg?: number | null
+          id?: string
+          kg_rescued?: number | null
+          match_id?: string | null
+          meals_provided?: number | null
+          notes?: string | null
+          recorded_at?: string
+        }
+        Update: {
+          co2_saved_kg?: number | null
+          id?: string
+          kg_rescued?: number | null
+          match_id?: string | null
+          meals_provided?: number | null
+          notes?: string | null
+          recorded_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "impact_events_match_id_fkey"
+            columns: ["match_id"]
+            isOneToOne: false
+            referencedRelation: "matches"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      matches: {
+        Row: {
+          completed_at: string | null
+          donation_id: string
+          id: string
+          matched_at: string
+          recipient_id: string
+          status: string
+        }
+        Insert: {
+          completed_at?: string | null
+          donation_id: string
+          id?: string
+          matched_at?: string
+          recipient_id: string
+          status?: string
+        }
+        Update: {
+          completed_at?: string | null
+          donation_id?: string
+          id?: string
+          matched_at?: string
+          recipient_id?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "matches_donation_id_fkey"
+            columns: ["donation_id"]
+            isOneToOne: false
+            referencedRelation: "donations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "matches_recipient_id_fkey"
+            columns: ["recipient_id"]
+            isOneToOne: false
+            referencedRelation: "recipients"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          organization: string | null
+          phone: string | null
+          role: string | null
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string | null
+          id: string
+          organization?: string | null
+          phone?: string | null
+          role?: string | null
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          organization?: string | null
+          phone?: string | null
+          role?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      recipients: {
+        Row: {
+          address: string | null
+          capacity: number | null
+          created_at: string
+          id: string
+          lat: number | null
+          lng: number | null
+          needs_description: string | null
+          organization_name: string
+          user_id: string | null
+        }
+        Insert: {
+          address?: string | null
+          capacity?: number | null
+          created_at?: string
+          id?: string
+          lat?: number | null
+          lng?: number | null
+          needs_description?: string | null
+          organization_name: string
+          user_id?: string | null
+        }
+        Update: {
+          address?: string | null
+          capacity?: number | null
+          created_at?: string
+          id?: string
+          lat?: number | null
+          lng?: number | null
+          needs_description?: string | null
+          organization_name?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
