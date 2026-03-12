@@ -12,7 +12,7 @@ const Footer = () => (
         <a href="#" className="hover:text-accent transition-colors">Demo</a>
         <a href="#" className="hover:text-accent transition-colors">Hackathon submission</a>
       </div>
-      <p className="text-sm opacity-60 w-full md:w-auto text-center">© 2026 · UK AI Agent Hackathon EP4 x OpenClaw</p>
+      <p className="text-sm opacity-60 w-full md:w-auto text-center">© 2026 · NourishNet</p>
     </div>
   </footer>
 );
