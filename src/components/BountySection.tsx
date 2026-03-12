@@ -12,7 +12,7 @@ const checks = [
 const BountySection = () => (
   <section className="container mx-auto my-16 text-center">
     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-      <Heart className="h-4 w-4 fill-primary/30" />
+      <Heart className="h-4 w-4" />
       Built for Impact
     </div>
     <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Technology that serves humanity</h2>
@@ -23,17 +23,17 @@ const BountySection = () => (
       {checks.map((c, i) => (
         <motion.span
           key={c}
-          className="inline-flex items-center gap-2 bg-card border border-border text-foreground px-4 py-2 rounded-full font-medium text-sm shadow-sm"
+          className="inline-flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-full font-medium text-sm"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.1 }}
         >
-          <Check className="h-4 w-4 text-success" /> {c}
+          <Check className="h-4 w-4 text-primary" /> {c}
         </motion.span>
       ))}
     </div>
-    <div className="rounded-3xl px-8 py-5 inline-block" style={{ background: "var(--gradient-hero)" }}>
+    <div className="bg-secondary rounded-3xl px-8 py-5 inline-block">
       <p className="text-foreground font-semibold">
         Together we're rescuing meals and reducing waste 💚
       </p>

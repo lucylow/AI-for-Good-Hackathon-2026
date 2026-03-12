@@ -133,7 +133,7 @@ const HeroSection = () => {
                 </div>
                 <span className="font-semibold text-foreground text-sm">NourishNet Bot</span>
                 <span className="ml-auto text-xs text-success font-medium flex items-center gap-1">
-                  <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse-soft" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-soft" />
                   Live
                 </span>
               </div>
