@@ -12,14 +12,14 @@ const HeroSection = () => (
       transition={{ duration: 0.7 }}
     >
       <span className="inline-block bg-secondary text-secondary-foreground font-semibold px-4 py-1.5 rounded-full text-sm border border-border mb-4">
-        🤖 AI for Good · FLock Track
+        🤖 AI for Good
       </span>
       <h1 className="text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold leading-tight mb-6 text-foreground">
         Autonomous agents rescuing food,{" "}
         <span className="text-accent border-b-[3px] border-accent">fighting hunger.</span>
       </h1>
       <p className="text-lg text-muted-foreground max-w-[550px] mb-8">
-        NourishNet connects businesses, NGOs, and people via WhatsApp/Telegram to redistribute surplus meals — powered by OpenClaw and FLock's open-source LLMs.
+        NourishNet connects businesses, NGOs, and people via WhatsApp/Telegram to redistribute surplus meals — powered by AI and open-source models.
       </p>
       <div className="flex gap-3 flex-wrap">
         <Button size="lg" asChild>

@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const checks = [
-  "OpenClaw framework",
-  "FLock API for inference",
+  "Agent orchestration",
+  "AI-powered inference",
   "Only open-source models",
   "WhatsApp / Telegram",
   "SDG 2, 3, 12",
@@ -11,9 +11,9 @@ const checks = [
 
 const BountySection = () => (
   <section className="container mx-auto my-16 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Built for the FLock.io Bounty</h2>
+    <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">Built for Impact</h2>
     <p className="text-lg text-muted-foreground max-w-[700px] mx-auto mb-8">
-      NourishNet hits every requirement: autonomous agents, SDG alignment, FLock API, open-source models, multi-channel.
+      NourishNet hits every mark: autonomous agents, SDG alignment, AI inference, open-source models, multi-channel.
     </p>
     <div className="flex flex-wrap justify-center gap-3 mb-8">
       {checks.map((c, i) => (
