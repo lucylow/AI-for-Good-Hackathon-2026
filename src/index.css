@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+@layer base {
+  :root {
+    --background: 100 30% 97%;
+    --foreground: 150 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 12%;
+
+    --primary: 152 44% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 140 30% 94%;
+    --secondary-foreground: 152 44% 20%;
+
+    --muted: 140 20% 94%;
+    --muted-foreground: 150 15% 40%;
+
+    --accent: 30 80% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 140 20% 88%;
+    --input: 140 20% 88%;
+    --ring: 152 44% 30%;
+
+    --radius: 1rem;
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    --gradient-hero: linear-gradient(145deg, hsl(140 30% 85%), hsl(152 35% 75%));
+    --gradient-impact: linear-gradient(135deg, hsl(152 44% 30%), hsl(155 50% 22%));
+    --shadow-card: 0 10px 25px -8px hsl(152 30% 20% / 0.1);
+    --shadow-hero: 0 20px 30px -10px hsl(152 50% 20% / 0.2);
+    --shadow-glass: 0 8px 32px hsl(152 30% 20% / 0.08), 0 2px 8px hsl(150 20% 10% / 0.06);
+    --glass-bg: hsl(0 0% 100% / 0.85);
+    --glass-border: hsl(140 20% 88% / 0.5);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
